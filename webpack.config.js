@@ -51,11 +51,13 @@ module.exports = {
             {test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: 'file-loader'},
             {
                 test: /\.(png|jpe?g|gif)$/,
-                use: [
-                    'url-loader',
-                    {
-                        loader: "image-webpack-loader"
-                    }
+                use: [{
+                    loader: 'file-loader',
+                    options: {
+                        outputPath: '',
+                        publicPath: 'dist',
+                    },
+                }
                 ]
             },
             {
