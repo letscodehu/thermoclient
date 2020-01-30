@@ -4,6 +4,12 @@ import VueRouter from 'vue-router';
 import MainPage from "./components/MainPage.vue";
 import Vue2TouchEvents from 'vue2-touch-events'
 import 'element-ui/lib/theme-chalk/index.css';
+import 'c-swipe/dist/swipe.css';
+import { Swipe, SwipeItem } from 'c-swipe';
+
+// global register components
+Vue.component('swipe', Swipe);
+Vue.component('swipe-item', SwipeItem);
 
 Vue.use(Vue2TouchEvents);
 Vue.use(ElementUI);
@@ -20,12 +26,12 @@ const router = new VueRouter({
 });
 
 
-    new Vue({
-        el: "#app",
-        components: {
-            MainPage
-        },
-        router
-    })
+new Vue({
+    el: "#app",
+    components: {
+        MainPage
+    },
+    router
+});
 
 

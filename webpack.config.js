@@ -4,7 +4,8 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
     output: {
-        path : path.resolve(__dirname,"./www/dist")
+        path : path.resolve(__dirname,"./www/dist"),
+        publicPath: '/dist/'
     },
     mode: "development",
     resolve: {
@@ -52,11 +53,7 @@ module.exports = {
             {
                 test: /\.(png|jpe?g|gif)$/,
                 use: [{
-                    loader: 'file-loader',
-                    options: {
-                        outputPath: '',
-                        publicPath: 'dist',
-                    },
+                    loader: 'file-loader'
                 }
                 ]
             },
